@@ -4,8 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once('connectiondb.php');
-
 
 $servername = "ble5yqb2cqx9wfu6iimn-mysql.services.clever-cloud.com";
 $username = "u2waladsf1crcwtx";
