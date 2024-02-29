@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Survey Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container ">
+        <header class="header">
+            <h1 id="title">
+                Movie Survey from WMSU Computer Science Department
+            </h1>
+            <p id="description">
+                Thank you for taking the time to help us 
+            </p>
+        </header>
+        <form action="http://localhost/Movie Survey/submit.php" method="post" id="survey-form">
+
+            <!-- Text section -->
+            <div class="form-group">
+                <label for="name"class="for-name">Name</label>
+                <input type="text" name="name" id="name" class="formControl" placeholder="Enter your name" required>
+            </div>
+            <!-- end of text section -->
+
+            <!-- Type Email section -->
+            <div class="form-group">
+                <label for="email"class="for-name">Email</label>
+                <input type="email" name="email" id="email" class="formControl" placeholder="Enter your Email" required>
+            </div>
+            <!-- end of Email section -->
+
+            <!-- Type Number section -->
+            <div class="form-group">
+                <label for="phone"class="for-name">Phone Number</label>
+                <input type="number" name="phone" id="phone" class="formControl" placeholder="Enter your phone number" required>
+            </div>
+            <!-- end of Number section -->
+
+            <!-- Type Number section -->
+            <div class="form-group">
+                <label for="address"class="for-name">Address <span class="clue">(optional)</span></label>
+                <input type="text" name="address" id="address" class="formControl" placeholder="Enter your address">
+            </div>
+            <div class="form-group">
+                <label for="age"class="for-Age">What is your Age ?</label>
+                <input type="age" name="age" id="age" class="formControl" placeholder="Enter your Age" required>
+            </div>
+            
+            <!--  end of number section -->
+
+            <!-- select section -->
+            <div class="form-group">
+                <p id="quest">Which option best describe your current role</p>
+                <select name="role" required id="dropdown" class="formControl">
+                    <option value disabled selected >Select current role</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="job">Job</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p id="quest">What is your Gender ?</p>
+                <label for="">
+                    <input type="radio" name="gender" value="freinds"
+                    class="inputRadio"
+                    checked> Male
+                </label>
+                <label for="">
+                    <input type="radio" name="gender" value="tv-ads"
+                    class="inputRadio"
+                    checked>Female
+                </label>
+                                   
+            </div>
+           
+            <!-- end of select section -->
+
+            <!-- radio button section -->
+            <div class="form-group">
+                <p id="quest">1. What is  your most favorite genre of movies?</p>
+                <label for="">
+                    <input type="radio" name="genre" value="Action and adventure"
+                    class="inputRadio"
+                    checked> Action and adventure
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Comedy"
+                    class="inputRadio"
+                    >Comedy
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Historical"
+                    class="inputRadio"
+                    > Historical
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Science fiction"
+                    class="inputRadio"
+                    > Science fiction
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Western"
+                    class="inputRadio"
+                    > Western
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Animation"
+                    class="inputRadio"
+                    > Animation
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Drama"
+                    class="inputRadio"
+                    > Drama
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Horror"
+                    class="inputRadio"
+                    > Horror
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Thriller"
+                    class="inputRadio"
+                    > Thriller
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Romance"
+                    class="inputRadio"
+                    > Romance
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Documentary"
+                    class="inputRadio"
+                    > Documentary
+                </label>
+                <label for="">
+                    <input type="radio" name="genre" value="Fantasy"
+                    class="inputRadio"
+                    > Fantasy
+                </label>
+                <label>
+                    <input type="radio" name="genre" value="other" class="inputRadio" id="otherGenreRadio"> Other
+                </label>
+                <label id="otherGenreLabel" style="display: none;">
+                    Specify:
+                    <input type="text" name="otherGenreSpecify" id="otherGenreSpecify" placeholder="Specify other genre">
+                </label>
+            
+            
+            </div>
+            <div class="form-group">
+                <p id="quest">2. Do you prefer watching movies with subtitles or without ?</p>
+                <label for="">
+                    <input type="radio" name="subtitles" value="With subtitles"
+                    class="inputRadio"
+                    checked> With subtitles
+                </label>
+                <label for="">
+                    <input type="radio" name="subtitles" value="Without subtitles"
+                    class="inputRadio"
+                    >Without subtitles
+                </label>
+                <label for="">
+                
+                
+            </div>
+            <div class="form-group">
+                <p id="quest">3. What is the most important element for you in a movie ?</p>
+                <label for="">
+                    <input type="radio" name="element" value="Content"
+                    class="inputRadio"
+                    checked> Content
+                </label>
+                <label for="">
+                    <input type="radio" name="element" value="Cinematic Effects"
+                    class="inputRadio"
+                    >Cinematic Effects
+                </label>
+                <label for="">
+                    <input type="radio" name="element" value="Characterization"
+                    class="inputRadio"
+                    > Characterization
+                </label>
+                <label for="">
+                    <input type="radio" name="element" value="SoundTrack"
+                    class="inputRadio"
+                    > SoundTrack
+                </label>
+                <label>
+                    <input type="radio" name="element" value="other" class="inputRadio" id="otherElementRadio"> Other
+                </label>
+                <label id="otherElementLabel" style="display: none;">
+                    Specify:
+                    <input type="text" name="otherElementSpecify" id="otherElementSpecify" placeholder="Specify other element">
+                </label>
+                
+            </div>
+            <div class="form-group">
+                <p id="quest">4. How often do you watch a movie ?</p>
+                <label for="">
+                    <input type="radio" name="oftenwatch" value="Daily"
+                    class="inputRadio"
+                    checked> Daily
+                </label>
+                <label for="">
+                    <input type="radio" name="oftenwatch" value="Weekly"
+                    class="inputRadio"
+                    >Weekly
+                </label>
+                <label for="">
+                    <input type="radio" name="oftenwatch" value="Monthly"
+                    class="inputRadio"
+                    > Monthly
+                </label>
+                <label for="">
+                    <input type="radio" name="oftenwatch" value="Rarely"
+                    class="inputRadio"
+                    > Rarely
+                </label>              
+            </div>
+            <div class="form-group">
+                <p id="quest">5. What device do you use most often to watch movies ?</p>
+                <label for="">
+                    <input type="radio" name="device" value="Laptop"
+                    class="inputRadio"
+                    checked> Laptop
+                </label>
+                <label for="">
+                    <input type="radio" name="device" value="Smart Phone "
+                    class="inputRadio"
+                    >Smart Phone 
+                </label>
+                <label for="">
+                    <input type="radio" name="device" value="Tablet"
+                    class="inputRadio"
+                    > Tablet
+                </label>
+                <label for="">
+                    <input type="radio" name="device" value="TV"
+                    class="inputRadio"
+                    > TV
+                </label>
+                <label>
+                    <input type="radio" name="device" value="other" class="inputRadio" id="otherDeviceRadio"> Other
+                </label>
+                <label id="otherDeviceLabel" style="display: none;">
+                    Specify:
+                    <input type="text" name="otherDeviceSpecify" id="otherDeviceSpecify" placeholder="Specify other device">
+                </label>
+            </div>
+            <div class="form-group">
+                <p id="quest">6. What types of movies  do you avoid watching ?</p>
+                <label for="">
+                    <input type="radio" name="avoid" value="Violence"
+                    class="inputRadio"
+                    checked> Violence
+                </label>
+                <label for="">
+                    <input type="radio" name="avoid" value="Horror"
+                    class="inputRadio"
+                    >Horror
+                </label>
+                <label for="">
+                    <input type="radio" name="avoid" value="Romance"
+                    class="inputRadio"
+                    > Romance
+                </label>
+                <label for="">
+                    <input type="radio" name="avoid" value="Comedy"
+                    class="inputRadio"
+                    > Comedy
+                </label>
+                <label>
+                    <input type="radio" name="avoid" value="other" class="inputRadio" id="otherAvoidRadio"> Other
+                </label>
+                <label id="otherAvoidLabel" style="display: none;">
+                    Specify:
+                    <input type="text" name="otherAvoidSpecify" id="otherAvoidSpecify" placeholder="Specify other movie types to avoid">
+                </label>                            
+            </div>
+            <div class="form-group">
+                <p id="quest">7. Do you prefer watching movies alone or with others?</p>
+                <label for="">
+                    <input type="radio" name="watching" value="Alone"
+                    class="inputRadio"
+                    checked> Alone
+                </label>
+                <label for="">
+                    <input type="radio" name="watching" value="With friends"
+                    class="inputRadio"
+                    >With friends
+                </label>
+                <label for="">
+                    <input type="radio" name="watching" value="With family"
+                    class="inputRadio"
+                    > With family
+                </label> 
+                <label>
+                    <input type="radio" name="watching" value="other" class="inputRadio" id="otherWatchingRadio"> Other
+                </label>
+                <label id="otherWatchingLabel" style="display: none;">
+                    Specify:
+                    <input type="text" name="otherWatchingSpecify" id="otherWatchingSpecify" placeholder="Specify your preference">
+                </label>                                         
+            </div>
+            <div class="form-group">
+                <p id="quest">8. What is yopur preferred movie length?</p>
+                <label for="">
+                    <input type="radio" name="hour" value="Below 1hr"
+                    class="inputRadio"
+                    checked> Below 1hr
+                </label>
+                <label for="">
+                    <input type="radio" name="hour" value="1hr"
+                    class="inputRadio"
+                    >1hr
+                </label>
+                <label for="">
+                    <input type="radio" name="hour" value="Above 1hr"
+                    class="inputRadio"
+                    > Above 1hr
+                </label>                                
+            </div>
+            <div class="form-group">
+                <p id="quest">9. How much do movie ratings influence your decision to watch a film??</p>
+                <label for="">
+                    <input type="radio" name="ratings" value="A lot"
+                    class="inputRadio"
+                    checked> A lot
+                </label>
+                <label for="">
+                    <input type="radio" name="ratings" value="Somewhat"
+                    class="inputRadio"
+                    >Somewhat
+                </label>
+                <label for="">
+                    <input type="radio" name="ratings" value="Neutral"
+                    class="inputRadio"
+                    > Neutral
+                </label>
+                <label for="">
+                    <input type="radio" name="ratings" value="Not Much"
+                    class="inputRadio"
+                    > Not Much
+                </label>
+                <label for="">
+                    <input type="radio" name="ratings" value="Not at all"
+                    class="inputRadio"
+                    > Not at all
+                </label>
+                
+            </div>
+            <div class="form-group">
+                <p id="quest">10. Have you ever seen a movie that made you laugh out loud?</p>
+                <label for="">
+                    <input type="radio" name="laughOutloud" value="Yes"
+                    class="inputRadio"
+                    checked> Yes
+                </label>
+                <label for="">
+                    <input type="radio" name="laughOutloud" value="Maybe"
+                    class="inputRadio"
+                    >Maybe 
+                </label>
+                <label for="">
+                    <input type="radio" name="laughOutloud" value="Not at all"
+                    class="inputRadio"
+                    > Not at all
+                </label>             
+            </div>
+            
+            
+            <!-- end of radio button -->
+
+            <!-- Checkbox section -->
+            <!-- <div class="form-group">
+                <p id="quest">Would you like to see improved ? </p>
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="front-end-dev"> Front-end Developer
+                </label>
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="back-end-dev"> Back-end Developer
+                </label>
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="app-dev">  Android App Developer
+                </label>
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="soft-engineering"> Software Engineering
+                </label>
+                <label for="">
+                    <input type="checkbox" name="prefer" class="checkbox" value="other"> Other
+                </label>
+            </div> -->
+            <!-- End of checkbox section -->
+
+            <!-- Textarea section -->
+            <div class="form-group">
+                <p id="quest">Give us your feedback</p>
+                <textarea name="feedback"  cols="30" rows="5"  id="feedback" class="textarea" placeholder="Enter your feedback here..."></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
