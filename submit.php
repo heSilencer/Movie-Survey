@@ -67,21 +67,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare and execute SQL statement
     // ...
+    $submissionDate = date("Y-m-d");
 
-// Prepare and execute SQL statement
+    // Prepare and execute SQL statement
     $stmt = $conn->prepare("INSERT INTO responses (name, email, phone, address, age, role, gender, genre,
-    subtitles, element, oftenwatch, avoid, device, watching, hour, ratings, laughOutloud, feedback)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    subtitles, element, oftenwatch, avoid, device, watching, hour, ratings, laughOutloud, feedback, submission_date)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     // Update the order of parameters in bind_param to match the SQL query
-    $stmt->bind_param("ssssssssssssssssss", $name, $email, $phone, $address, $age, $role, $gender, 
-    $genre, $subtitles, $element, $oftenwatch, $avoid, $device, $watching,
-    $hour, $ratings, $laughOutloud, $feedback);
+    $stmt->bind_param("sssssssssssssssssss", $name, $email, $phone, $address, $age, $role, $gender,
+        $genre, $subtitles, $element, $oftenwatch, $avoid, $device, $watching,
+        $hour, $ratings, $laughOutloud, $feedback, $submissionDate);
     $stmt->execute();
     $stmt->close();
-
-// ...
-
 
     // Close the database connection
     $conn->close();
