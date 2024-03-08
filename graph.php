@@ -11,15 +11,15 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the database for students
-$sqlStudent = "SELECT genre, COUNT(*) AS count FROM survey_responses WHERE role='student' GROUP BY genre";
+$sqlStudent = "SELECT genre, COUNT(*) AS count FROM responses WHERE role='student' GROUP BY genre";
 $resultStudent = $conn->query($sqlStudent);
 
 // Fetch data from the database for teachers
-$sqlTeacher = "SELECT genre, COUNT(*) AS count FROM survey_responses WHERE role='teacher' GROUP BY genre";
+$sqlTeacher = "SELECT genre, COUNT(*) AS count FROM responses WHERE role='teacher' GROUP BY genre";
 $resultTeacher = $conn->query($sqlTeacher);
 
 // Fetch data from the database for jobs
-$sqlJob = "SELECT genre, COUNT(*) AS count FROM survey_responses WHERE role='job' GROUP BY genre";
+$sqlJob = "SELECT genre, COUNT(*) AS count FROM responses WHERE role='job' GROUP BY genre";
 $resultJob = $conn->query($sqlJob);
 
 // Prepare data for Chart.js

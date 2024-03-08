@@ -5,10 +5,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$servername = "ble5yqb2cqx9wfu6iimn-mysql.services.clever-cloud.com";
-$username = "u2waladsf1crcwtx";
-$password = "1TJgJ2X2x9HMV92Hjkm0";
-$dbname = "ble5yqb2cqx9wfu6iimn";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "survey_database";
 $port = 3306;
 
 // Create connection
@@ -47,6 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = isset($_POST["role"]) ? $_POST["role"] : "";
     $gender = isset($_POST["gender"]) ? $_POST["gender"] : "";
     $genre = isset($_POST["genre"]) ? $_POST["genre"] : "";
+
+    if ($genre === "other") {
+        // User selected "Other," use the custom genre value
+        $customGenre = isset($_POST["otherGenreSpecify"]) ? $_POST["otherGenreSpecify"] : "";
+        $genre = !empty($customGenre) ? $customGenre : "Other"; // Use "Other" if custom genre is empty
+    }
     $subtitles = isset($_POST["subtitles"]) ? $_POST["subtitles"] : "";
     $element = isset($_POST["element"]) ? $_POST["element"] : "";
     $oftenwatch = isset($_POST["oftenwatch"]) ? $_POST["oftenwatch"] : "";
